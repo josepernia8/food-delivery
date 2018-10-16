@@ -1,0 +1,40 @@
+{
+  "name": "food-delivery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rest API for Restaurant Delivery",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
+  "author": "José Pernía",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/username/repository/issues"
+  },
+  "homepage": "https://github.com/username/repository#readme",
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "^1.7.1",
+    "morgan": "~1.9.0",
+    "pg-promise": "^8.0.0",
+    "pug": "2.0.0-beta11",
+    "cors": "^2.8.4",
+    "jwt-simple": "^0.5.5",
+    "moment": "^2.22.2",
+    "amqplib": "^0.5.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0"
+  }
+}

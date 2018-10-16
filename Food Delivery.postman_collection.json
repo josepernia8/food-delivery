@@ -1,0 +1,348 @@
+{
+	"id": "b1266cab-6c00-4acb-b679-3100178fa99f",
+	"name": "Food Delivery",
+	"description": "This is a collection to use the endpoints in the Food Delivery Nodejs API",
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}"
+			}
+		]
+	},
+	"events": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b4f8c469-a5a2-4682-99d1-a85140f5e677",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "15768e15-a53d-4ccf-8245-03cb3d3f6161",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variables": [],
+	"order": [
+		"af51f506-bbef-4fad-b907-1a743c6454a2",
+		"a62be395-79ab-4f4b-8195-5b38c58c7230"
+	],
+	"folders_order": [
+		"7b9921fa-9171-4be0-a73a-a0b28900ce6b",
+		"5a06bdce-1db7-4b52-9d4e-233f7740a033",
+		"58df30ce-5f12-4011-9fa4-2ebceb7feb64"
+	],
+	"folders": [
+		{
+			"id": "7b9921fa-9171-4be0-a73a-a0b28900ce6b",
+			"name": "Messages",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "b1266cab-6c00-4acb-b679-3100178fa99f",
+			"folder": null,
+			"order": [
+				"92e9584d-c90a-4523-8a89-2d36c6d5e0d2",
+				"b2effa8e-d5c7-4eea-b8ca-38ef2f96780f"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "58df30ce-5f12-4011-9fa4-2ebceb7feb64",
+			"name": "Restaurant Management",
+			"description": "",
+			"auth": null,
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ec5999f5-30f9-4233-be4b-34f4699c8ee6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4540e19b-1eba-437d-8213-1586af3ba89c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"collection": "b1266cab-6c00-4acb-b679-3100178fa99f",
+			"folder": null,
+			"order": [
+				"2b0bf0f4-6464-405a-8ea4-d1d035b1ffca",
+				"0eeead36-95d8-4ae6-89fe-bb069e2182f7",
+				"932b20c9-f84e-4190-bb72-c394191e6f3b",
+				"09cdb0e6-99eb-448c-8493-7a58952c4ad4"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "5a06bdce-1db7-4b52-9d4e-233f7740a033",
+			"name": "User Managament",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "b1266cab-6c00-4acb-b679-3100178fa99f",
+			"folder": null,
+			"order": [
+				"cdc87adc-0588-4cee-add9-a8faefd96765",
+				"183afc4c-19e0-42e7-8bf4-558e8cc55ab3"
+			],
+			"folders_order": []
+		}
+	],
+	"requests": [
+		{
+			"id": "09cdb0e6-99eb-448c-8493-7a58952c4ad4",
+			"name": "Update Restaurant",
+			"url": "http://localhost:3000/api/restaurants/3",
+			"description": "Update an existing Restaurant",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "58df30ce-5f12-4011-9fa4-2ebceb7feb64",
+			"rawModeData": "{\n\t\"legalname\": \"The Indian Restaurant\",\n\t\"adminnumber\": \"+58 222 3344\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0eeead36-95d8-4ae6-89fe-bb069e2182f7",
+			"name": "Get a Single Restaurant",
+			"url": "http://localhost:3000/restaurants/1",
+			"description": "Get a Single Restaurant",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "58df30ce-5f12-4011-9fa4-2ebceb7feb64",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "183afc4c-19e0-42e7-8bf4-558e8cc55ab3",
+			"name": "Log In",
+			"url": "http://localhost:3000/user/login",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "70f21edf-7d2e-452d-9514-65923d941739",
+						"type": "text/javascript",
+						"exec": [
+							"//let jsonData = pm.response.json();",
+							"//pm.environment.set(\"token\", jsonData.message.token);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "30278bd8-7557-43b9-8b0d-dff87dcc4338",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": "5a06bdce-1db7-4b52-9d4e-233f7740a033",
+			"rawModeData": "{\n\t\"username\": \"jdoe\",\n\t\"password\": \"123456\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2b0bf0f4-6464-405a-8ea4-d1d035b1ffca",
+			"name": "Get All Restaurants",
+			"url": "http://localhost:3000/restaurants",
+			"description": "Get All Restaurants",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be8d1bb0-e87f-4adf-b4d5-3c9d3718cdca",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": "58df30ce-5f12-4011-9fa4-2ebceb7feb64",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "92e9584d-c90a-4523-8a89-2d36c6d5e0d2",
+			"name": "Send Notification Messages",
+			"url": "http://localhost:3000/message/notification",
+			"description": "Endpoint Made for calling the RabbitMQ Consumer Service for Notifications",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "7b9921fa-9171-4be0-a73a-a0b28900ce6b",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "932b20c9-f84e-4190-bb72-c394191e6f3b",
+			"name": "Create Restaurant",
+			"url": "http://localhost:3000/restaurants",
+			"description": "Create a New Restaurant",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "58df30ce-5f12-4011-9fa4-2ebceb7feb64",
+			"rawModeData": "{\n\t\"logo\": \"https://static.tacdn.com/img2/branding/rebrand/TA_logo_secondary.svg\",\n\t\"commercialname\": \"Mariella Pizza\",\n\t\"legalname\": \"Mariella Pizza\",\n\t\"commercialemail\": \"mariellapizza@gmail.com\",\n\t\"adminnumber\": \"+1 212-757-5278\",\n\t\"address\": \"935 8th Ave At the rear of The Bread Factory New York City, NY 10019-4256\",\n\t\"latitude\": 40.7657566,\n\t\"longitude\": -73.9861177\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "a62be395-79ab-4f4b-8195-5b38c58c7230",
+			"name": "Get Created Orders",
+			"url": "http://localhost:3000/orders",
+			"description": "List All Orders Created",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"restaurantid\": 1,\n\t\"meals\": [\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"quantity\": 1\n\t\t},\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"quantity\": 2\n\t\t}\n\t]\n}",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "af51f506-bbef-4fad-b907-1a743c6454a2",
+			"name": "Create an Order",
+			"url": "http://localhost:3000/order/create",
+			"description": "Create an Order",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"restaurantid\": 1,\n\t\"meals\": [\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"quantity\": 1\n\t\t},\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"quantity\": 2\n\t\t}\n\t]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b2effa8e-d5c7-4eea-b8ca-38ef2f96780f",
+			"name": "Send Order Messages",
+			"url": "http://localhost:3000/message/order",
+			"description": "Endpoint Made for calling the RabbitMQ Consumer Service for Orders",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "7b9921fa-9171-4be0-a73a-a0b28900ce6b",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "cdc87adc-0588-4cee-add9-a8faefd96765",
+			"name": "Get All Users",
+			"url": "http://localhost:3000/user",
+			"description": "This endpoint retrieve all users for convenience and easy access to them",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "5a06bdce-1db7-4b52-9d4e-233f7740a033",
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}

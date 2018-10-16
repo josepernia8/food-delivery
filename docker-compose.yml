@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+  api:
+    container_name: food-delivery-api
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      POSTGRES_HOST: postgres://postgres:passwd@db:5432/delivery
+      PORT: 3000
+    depends_on:
+      - db
+    links:
+      - db
+      - rabbit
+    volumes:
+      - './app:/app:rw'
+
+  db:
+    container_name: food-delivery-db
+    restart: always
+    image: postgres:10.3-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: delivery
+    volumes:
+      - './db/data:/var/lib/postgresql/data:rw'
+      - './structure.sql:/docker-entrypoint-initdb.d/structure.sql'
+      - './fixtures.sql:/docker-entrypoint-initdb.d/fixtures.sql'
+  
+  rabbit:
+    container_name: food-delivery-rabbit
+    image: "rabbitmq:3.7.8-alpine"
+    environment:
+      - RABBITMQ_ERLANG_COOKIE='secret_cookie'
+    ports:
+      - "56721:5672"
